@@ -12,6 +12,7 @@ A _dead simple_ script that installs (build) dependencies, clones [Supercollider
 ```bash
 $ git clone https://github.com/lvm/build-supercollider/
 $ sh build-supercollider.sh
+$ sh build-sc3-plugins.sh
 ```
 
 That's all.  
