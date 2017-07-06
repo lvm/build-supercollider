@@ -7,6 +7,8 @@
 INSTALL_DIR=/tmp
 SC3PLUGINS_DIR=$INSTALL_DIR/sc3-plugins
 SC3PLUGINS_BUILD_DIR=$SC3PLUGINS_DIR/build
+SC3_DIRECTORY=/usr/local/share/SuperCollider
+SC3_EXT_DIRECTORY=/usr/local/share/SuperCollider/Extensions
 
 ###
 #
@@ -38,6 +40,8 @@ git clone --recursive https://github.com/supercollider/sc3-plugins.git $SC3PLUGI
 # Create the the directory where SC will be built
 mkdir -p $SC3PLUGINS_BUILD_DIR
 
+sudo mkdir -p $SC3_EXT_DIRECTORY
+
 # And build it.
 cd $SC3PLUGINS_BUILD_DIR && \
     cmake -DCMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/ \
@@ -46,4 +50,5 @@ cd $SC3PLUGINS_BUILD_DIR && \
           -DBUILD_TESTING=OFF -DQUARKS=ON -DSUPERNOVA=ON .. && \
     make -j4 && \
     sudo make install && \
-    sudo ldconfig
+    sudo ldconfig && \
+    sudo mv $SC3_DIRECTORY/SC3plugins $SC3_EXT_DIRECTORY/SC3plugins
