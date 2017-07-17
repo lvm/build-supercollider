@@ -8,6 +8,7 @@ INSTALL_DIR=/tmp
 SUPERCOLLIDER_VER=3.8
 SUPERCOLLIDER_DIR=$INSTALL_DIR/supercollider
 SUPERCOLLIDER_BUILD_DIR=$SUPERCOLLIDER_DIR/build
+DEB_DIR=/tmp/supercollider-community-build-$SUPERCOLLIDER_VER
 
 ###
 #
@@ -38,10 +39,11 @@ git clone --recursive --branch $SUPERCOLLIDER_VER https://github.com/supercollid
 
 # Create the the directory where SC will be built
 mkdir -p $SUPERCOLLIDER_BUILD_DIR
+mkdir -p $DEB_DIR
 
 # And build it.
 cd $SUPERCOLLIDER_BUILD_DIR && \
-    cmake -DCMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/ -DBUILD_TESTING=OFF -DSC_ED=OFF -DSC_EL=OFF -DSC_WII=OFF -DSC_VIM=OFF -DSC_IDE=ON .. && \
+    cmake -DCMAKE_INSTALL_PREFIX=$DEB_DIR -DCMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/ -DBUILD_TESTING=OFF -DSC_ED=OFF -DSC_EL=OFF -DSC_WII=OFF -DSC_VIM=OFF -DSC_IDE=ON .. && \
     make -j4 && \
     sudo make install && \
     sudo ldconfig
