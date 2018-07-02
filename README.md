@@ -4,7 +4,7 @@ A _dead simple_ script that installs (build) dependencies, clones [Supercollider
 
 ## Current version:
 
-> 3.8.0
+> 3.9.1
 
 
 ## How to?
