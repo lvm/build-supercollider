@@ -5,6 +5,7 @@
 # Variables
 #
 INSTALL_DIR=/tmp
+SUPERCOLLIDER_VER=3.9
 SC3PLUGINS_DIR=$INSTALL_DIR/sc3-plugins
 SC3PLUGINS_BUILD_DIR=$SC3PLUGINS_DIR/build
 SC3_DIRECTORY=/usr/local/share/SuperCollider
@@ -35,7 +36,7 @@ sudo apt install -yq \
 mkdir -p $SC3PLUGINS_DIR
 
 # Download SC Source
-git clone --recursive https://github.com/supercollider/sc3-plugins.git $SC3PLUGINS_DIR
+git clone --recursive --branch $SUPERCOLLIDER_VER https://github.com/supercollider/sc3-plugins.git $SC3PLUGINS_DIR
 
 # Create the the directory where SC will be built
 mkdir -p $SC3PLUGINS_BUILD_DIR
