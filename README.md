@@ -4,7 +4,7 @@ A _dead simple_ script that installs (build) dependencies, clones [Supercollider
 
 ## Current version:
 
-> 3.9.1
+> 3.10
 
 
 ## How to?
@@ -18,10 +18,6 @@ $ sh build-sc3-plugins.sh
 
 That's all.  
 Keep in mind this script works on Debian-derivates distributions (such as Ubuntu, Mint, etc). Sorry Windows, OS X, and other GNU/linux distros.
-
-### Known issues
-
-If for some reason SC doesn't compile and throws an error about `libyaml.a`, check [this issue](https://github.com/supercollider/supercollider/issues/2825) and try again.
 
 ## Debian way
 
