@@ -19,4 +19,4 @@ $ sh build-sc3-plugins.sh
 That's all.  
 Keep in mind this script works on Debian-derivates distributions (such as Ubuntu, Mint, etc). Sorry Windows, OS X, and other GNU/linux distros.
 
-See [README-deb.md] for thoughts on making .deb packages.
+See [README-deb.md](README-deb.md) for thoughts on making .deb packages.
