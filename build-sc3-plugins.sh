@@ -5,6 +5,7 @@
 # Variables
 #
 INSTALL_DIR=/tmp
+SUPERCOLLIDER_DIR=$INSTALL_DIR/supercollider
 SUPERCOLLIDER_VER=3.10
 SC3PLUGINS_DIR=$INSTALL_DIR/sc3-plugins
 SC3PLUGINS_BUILD_DIR=$SC3PLUGINS_DIR/build
@@ -33,6 +34,8 @@ sudo apt install -yq \
 #
 # Download and build SC
 #
+
+rm -rf $SC3PLUGINS_DIR
 mkdir -p $SC3PLUGINS_DIR
 
 # Download SC3 Plugins Source
@@ -48,9 +51,16 @@ sudo mkdir -p $SC3_EXT_DIRECTORY
 cd $SC3PLUGINS_BUILD_DIR && \
     cmake -DCMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/ \
           -DCMAKE_INSTALL_PREFIX=/usr/local \
-          -DSC_PATH=/tmp/supercollider/ \
-          -DBUILD_TESTING=OFF -DQUARKS=ON -DSUPERNOVA=ON .. && \
+          -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+          -DSC_PATH=$SUPERCOLLIDER_DIR \
+          -DSUPERNOVA=ON \
+          -DBUILD_TESTING=OFF \
+          -DQUARKS=ON \
+          -DNATIVE=ON .. && \
     make -j4 && \
     sudo make install && \
     sudo ldconfig && \
     sudo mv $SC3_DIRECTORY/SC3plugins $SC3_EXT_DIRECTORY/SC3plugins
+    # This plugin ceases scsynth launching. In new version there will be flag to deactivate ladspa.
+    sudo rm /usr/local/lib/SuperCollider/plugins/LadspaUGen.so
+    sudo rm /usr/local/lib/SuperCollider/plugins/LadspaUGen_supernova.so
