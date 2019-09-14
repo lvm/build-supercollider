@@ -1,0 +1,3 @@
+version=3
+
+https://github.com/supercollider/supercollider/releases/latest .*/SuperCollider-(\d\S*)-Source-linux\.tar\.bz2

@@ -1,0 +1,56 @@
+Source: supercollider-community
+Section: sound
+Priority: optional
+Maintainer: Mauro <mauro@sdf.org>
+Build-Depends:
+ cmake (>= 2.8.12),
+ debhelper (>= 10~),
+ emacs | emacsen,
+ libasound2-dev [linux-any],
+ libavahi-client-dev,
+ libcwiid-dev,
+ libfftw3-dev,
+ libicu-dev,
+ libjack-dev,
+ libqt5core5a (>= 5.3),
+ libreadline-dev,
+ libsndfile1-dev (>= 1.0.16),
+ libudev-dev,
+ libxt-dev,
+ python-all-dev (>= 2.6.6-3~),
+ qtbase5-dev,
+ qt5-qmake,
+ qttools5-dev,
+ qttools5-dev-tools,
+ qtdeclarative5-dev,
+ libqt5opengl5-dev,
+ libqt5webkit5-dev,
+ qtwebengine5-dev,
+ libqt5websockets5-dev,
+ libqt5svg5-dev,
+ qtpositioning5-dev,
+ libqt5sensors5-dev,
+ libboost-dev (>= 1.57),
+ libboost-date-time-dev (>= 1.57),
+ libboost-filesystem-dev (>= 1.57),
+ libboost-math-dev (>= 1.57),
+ libboost-program-options-dev (>= 1.57),
+ libboost-regex-dev (>= 1.57),
+ libboost-system-dev (>= 1.57),
+ libboost-test-dev (>= 1.57),
+ libboost-thread-dev (>= 1.57)
+Standards-Version: 4.1.0
+Homepage: http://supercollider.github.io
+
+Package: supercollider-community
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, jackd,
+ libsndfile1-dev (>= 1.0.16)
+Description: real time audio synthesis programming language
+ SuperCollider is an environment and programming language for real time
+ audio synthesis and algorithmic composition. It provides an interpreted
+ object-oriented language which functions as a network client
+ to a state of the art, realtime sound synthesis server.
+ .
+ This package is community maintained NOT maintained/related to
+ Debian or Ubuntu.

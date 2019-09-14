@@ -1,0 +1,34 @@
+#! /usr/bin/make -f
+
+include /usr/share/dpkg/architecture.mk
+
+DPKG_EXPORT_BUILDFLAGS = 1
+DEB_BUILD_MAINT_OPTIONS=hardening=+all
+include /usr/share/dpkg/default.mk
+
+%:
+	dh $@
+
+export DH_OPTIONS
+
+export VERSION=`dpkg-parsechangelog -SVersion`
+export DATE=`date`
+export REVISION_H="Source/Core/CtrlrRevision.h"
+export TEMPLATE_H="Source/Core/CtrlrRevision.template"
+
+DEB_CMAKE_EXTRA_FLAGS = \
+	-DCMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/ \
+	-DBUILD_TESTING=OFF \
+	-DSC_ED=OFF \
+	-DSC_EL=OFF \
+	-DSC_VIM=OFF \
+	-DSC_IDE=ON
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(DEB_CMAKE_EXTRA_FLAGS)
+
+override_dh_auto_test:
+	@echo "Tests disabled"

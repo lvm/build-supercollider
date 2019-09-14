@@ -1,0 +1,17 @@
+name: 'deb packages'
+on: push
+
+
+jobs:
+  linux-packages:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Checkout'
+      uses: actions/checkout@master
+
+    - name: 'Build deb'
+      uses: ./actions
+      env:
+        SC_VERSION: 3.10.3
+        PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
