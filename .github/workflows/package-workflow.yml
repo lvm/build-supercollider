@@ -1,7 +1,8 @@
 name: 'deb packages'
-on: 
-  schedule:
-  - cron: 0 0 * * 0
+on:
+  push:
+    branches:
+    - master
 
 jobs:
   linux-packages:
