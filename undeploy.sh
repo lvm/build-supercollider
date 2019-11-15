@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -eux -o pipefail
 
 ## Variables
 INSTALL_DIR=/tmp
@@ -10,8 +12,8 @@ SC_INCLUDE_DIRECTORY=/usr/local/share/SuperCollider
 SC_LIB_DIRECTORY=/usr/local/lib/SuperCollider
 
 ## Uninstalling with make
-sudo make -j4 -C $SC3PLUGINS_DIR/build uninstall 
-sudo make -j4 -C $SUPERCOLLIDER_DIR/build uninstall 
+sudo make -j4 -C $SC3PLUGINS_DIR/build uninstall
+sudo make -j4 -C $SUPERCOLLIDER_DIR/build uninstall
 
 ## Remove wastes.
 sudo rm -rf $SC_SHARE_DIRECTORY
@@ -24,4 +26,4 @@ echo "ls /usr/local/share/" && ls /usr/local/share/
 echo "ls /usr/local/lib/" && ls /usr/local/lib/
 
 
- 
+
