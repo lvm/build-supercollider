@@ -45,7 +45,7 @@ mkdir -p $SUPERCOLLIDER_BUILD_DIR
 cd $SUPERCOLLIDER_BUILD_DIR && \
     cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
           -DCMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/ \
-          -DBUILD_TESTING=OFF -DSC_ED=OFF -DSC_EL=ON \
+          -DBUILD_TESTING=OFF -DSC_ED=OFF -DSC_EL=OFF \
           -DSC_VIM=ON -DSC_IDE=ON .. && \
     make -j4 && \
     sudo make install && \
