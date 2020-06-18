@@ -8,7 +8,7 @@ set -eux -o pipefail
 #
 echo -e "#\n# Variables\n#"
 INSTALL_DIR=/tmp
-SUPERCOLLIDER_VERSION=Version-3.10.3
+SUPERCOLLIDER_VERSION=Version-3.11.0
 SUPERCOLLIDER_DIR=$INSTALL_DIR/supercollider
 SUPERCOLLIDER_BUILD_DIR=$SUPERCOLLIDER_DIR/build
 
