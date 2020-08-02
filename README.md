@@ -23,7 +23,7 @@ See [README-deb.md](README-deb.md) for thoughts on making .deb packages.
 
 ### Known issues
 
-#### QT5 Not found
+#### Qt5 Not found
 
 [@pselle](https://github.com/pselle) kindly reported a solution
 
