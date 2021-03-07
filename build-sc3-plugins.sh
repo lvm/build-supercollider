@@ -5,7 +5,7 @@
 # Variables
 #
 INSTALL_DIR=/tmp
-SUPERCOLLIDER_VER=3.10
+SUPERCOLLIDER_VER=3.11
 SC3PLUGINS_DIR=$INSTALL_DIR/sc3-plugins
 SC3PLUGINS_BUILD_DIR=$SC3PLUGINS_DIR/build
 SC3_DIRECTORY=/usr/local/share/SuperCollider
@@ -37,7 +37,7 @@ sudo apt install -yq qt5-default
 mkdir -p $SC3PLUGINS_DIR
 
 # Download SC3 Plugins Source
-git clone --recursive --branch $SUPERCOLLIDER_VER \
+git clone --recursive \
     https://github.com/supercollider/sc3-plugins.git $SC3PLUGINS_DIR
 
 # Create the the directory where SC3 Plugins will be built
