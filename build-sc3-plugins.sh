@@ -37,7 +37,6 @@ sudo apt install -yq qt5-default
 #
 mkdir -p $SC3PLUGINS_DIR
 
-
 # Download SC3 Plugins Source
 git clone --recursive --branch $SUPERCOLLIDER_VER \
     https://github.com/supercollider/sc3-plugins.git $SC3PLUGINS_DIR
